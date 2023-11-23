@@ -4,9 +4,12 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -14,9 +17,13 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.businesscardapp.ui.theme.BusinessCardAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -47,33 +54,63 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Composable
 fun BusinessCard(modifier: Modifier = Modifier){
     val img = painterResource(id = R.drawable.android_logo)
-    Column {
-
-
+    Column (modifier = Modifier
+        .fillMaxSize()
+        .background(color = Color.Gray,),
+        ){
     Column (horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
             .fillMaxWidth()
-            .weight(0.7f)
+            .weight(0.7f),
+        verticalArrangement = Arrangement.Center
             ){
 Image(
 painter = img,
     contentDescription = "my image",
     modifier = Modifier
-        .size(50.dp)
+        .size(200.dp)
+        .padding(top = 30.dp, bottom = 5.dp)
 )
-        Text(text = "Maninder Singh")
-Text(text="Senior Software Engineer")
+        Text(text = "Maninder Singh",
+            fontSize = 40.sp,
+            color = Color.White,
+            modifier = Modifier
+                .padding(5.dp))
+Text(text="Senior Software Engineer",
+    fontWeight = FontWeight.Bold,
+    fontSize = 20.sp,
+    color = Color.White,
+    modifier = Modifier
+        .padding(5.dp))
+
     }
 
 
     Column(horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center,
         modifier = Modifier
             .fillMaxWidth()
             .weight(0.3f)) {
-        Text(text = "+91-9**14****")
-        Text(text="https://medium.com/@manindersingh120996")
+        Text(text = "+91-9**14****",
+            fontSize = 20.sp,
+            color = Color.White,
+            modifier = Modifier
+                .padding(5.dp))
+        Text(text="https://medium.com/@manindersingh120996",
+            fontSize = 20.sp,
+            color = Color.White,
+            textAlign = TextAlign.Center,
 
-        Text(text = "manindersingh120996@gmail.com")
+            modifier = Modifier
+                .padding(5.dp)
+
+        )
+
+        Text(text = "manindersingh120996@gmail.com",
+            fontSize = 20.sp,
+            color = Color.White,
+            modifier = Modifier
+                .padding(5.dp))
     }
     }
 }
