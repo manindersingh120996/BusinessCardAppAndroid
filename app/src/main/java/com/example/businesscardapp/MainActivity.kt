@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -46,7 +47,14 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Composable
 fun BusinessCard(modifier: Modifier = Modifier){
     val img = painterResource(id = R.drawable.android_logo)
-    Column (horizontalAlignment = Alignment.CenterHorizontally){
+    Column {
+
+
+    Column (horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = Modifier
+            .fillMaxWidth()
+            .weight(0.7f)
+            ){
 Image(
 painter = img,
     contentDescription = "my image",
@@ -58,11 +66,15 @@ Text(text="Senior Software Engineer")
     }
 
 
-    Column() {
+    Column(horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = Modifier
+            .fillMaxWidth()
+            .weight(0.3f)) {
         Text(text = "+91-9**14****")
         Text(text="https://medium.com/@manindersingh120996")
 
         Text(text = "manindersingh120996@gmail.com")
+    }
     }
 }
 
