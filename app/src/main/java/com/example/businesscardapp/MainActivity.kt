@@ -76,7 +76,7 @@ painter = img,
             color = Color.White,
             modifier = Modifier
                 .padding(5.dp))
-Text(text="Senior Software Engineer",
+Text(text="Senior Data Scientist",
     fontWeight = FontWeight.Bold,
     fontSize = 20.sp,
     color = Color.White,
@@ -113,6 +113,7 @@ Text(text="Senior Software Engineer",
                 .padding(5.dp))
     }
     }
+
 }
 
 @Preview(showBackground = true,
